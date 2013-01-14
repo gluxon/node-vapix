@@ -1,0 +1,17 @@
+{
+  "name": "node-vapix",
+  "version": "0.1.0",
+  "author": "Brandon Cheng <gluxon@gluxon.com>",
+  "description": "VAPIX is Axis’ own open API, implemented in Node.js ",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gluxon/node-vapix.git"
+  },
+  "main": "./lib/vapix",
+  "dependencies" : {
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.8"
+  }
+}
