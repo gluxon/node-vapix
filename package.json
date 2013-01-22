@@ -1,6 +1,6 @@
 {
   "name": "vapix",
-  "version": "0.1.0a2",
+  "version": "0.1.0b1",
   "author": "Brandon Cheng <gluxon@gluxon.com>",
   "description": "VAPIX is Axis’ own open API, implemented in Node.js ",
   "repository": {

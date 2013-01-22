@@ -8,9 +8,11 @@ var options = {
 	password: 'FRC'
 };
 
-var camera = new vapix.camera(options);
+var camera = new vapix.Camera(options);
+
 camera.requestImage(function(data) {
-	fs.appendFile("out.jpeg", data, function(err) {
+	// Write returned image data to file
+	fs.writeFile("out.jpg", data, function(err) {
 		if (err) throw err;
 	});
 });

@@ -36,4 +36,6 @@ node-vapix is written under the [MIT License]
 
 Status
 ------------
-As of January 21st, 2013, only a basic image download works.
+1-22-13: Basic image download refined, no longer need to concatenate
+chunks on frontend. Moving from alpha status to beta.
+1-21-13: Only a basic image download works.
