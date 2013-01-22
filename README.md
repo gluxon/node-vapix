@@ -1,6 +1,10 @@
 node-vapix
 ==========
 
+DO NOT USE
+----------
+This module is not yet stable. It is subject to change.
+
 What is this?
 -------------
 node-vapix is a Node.js implementation of VAPIX®, an HTTP-based API to
@@ -32,4 +36,4 @@ node-vapix is written under the [MIT License]
 
 Status
 ------------
-Not yet started.
+As of January 21st, 2013, only a basic image download works.
