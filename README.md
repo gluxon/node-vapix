@@ -1,17 +1,10 @@
-node-vapix
-==========
+# node-vapix
 
-DO NOT USE
-----------
-This module is not yet stable. It is subject to change.
-
-What is this?
--------------
 node-vapix is a Node.js implementation of VAPIX®, an HTTP-based API to
 interface with Axis cameras.
 
-What is VAPIX?
---------------
+## What is VAPIX?
+
 > VAPIX® is Axis’ own open API (Application Programming Interface). It
 > makes Axis network video solutions costefficient, flexible, scalable,
 > future-proof and easy to integrate with other systems.
@@ -29,13 +22,13 @@ the API.
 [http://www.axis.com/techsup/cam_servers/dev/cam_http_api_index.php]
 (http://www.axis.com/techsup/cam_servers/dev/cam_http_api_index.php)
 
-License
--------
-node-vapix is written under the [MIT License]
-(http://opensource.org/licenses/MIT)
+## License
 
-Status
-------------
+node-vapix is written under the [MIT License](http://opensource.org/licenses/MIT)
+
+## Status
+
+2-22-13: requestImage() now complete. Correctly throws error.
 1-22-13: Basic image download refined, no longer need to concatenate
 chunks on frontend. Moving from alpha status to beta.
 1-21-13: Only a basic image download works.

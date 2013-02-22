@@ -10,7 +10,9 @@ var options = {
 
 var camera = new vapix.Camera(options);
 
-camera.requestImage(function(data) {
+camera.requestImage(function(err, data) {
+	if (err) throw err;
+
 	// Write returned image data to file
 	fs.writeFile("out.jpg", data, function(err) {
 		if (err) throw err;
