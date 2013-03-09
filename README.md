@@ -28,6 +28,12 @@ node-vapix is written under the [MIT License](http://opensource.org/licenses/MIT
 
 ## Status
 
+#### 0.2
+
+- Added getImageResolution()
+- Reworked two request methods to use a common request template
+
+#### 0.1
 2-22-13: requestImage() now complete. Correctly throws error.  
 1-22-13: Basic image download refined, no longer need to concatenate
 chunks on frontend. Moving from alpha status to beta.  
