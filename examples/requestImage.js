@@ -10,7 +10,13 @@ var options = {
 
 var camera = new vapix.Camera(options);
 
-camera.requestImage(function(err, data) {
+var options = {
+	resolution: '640x480',
+	compression: 30,
+	rotation: 0
+}
+
+camera.requestImage(options, function(err, data) {
 	if (err) throw err;
 
 	// Write returned image data to file

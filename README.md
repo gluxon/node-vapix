@@ -35,8 +35,9 @@ And to use...
 
 ### camera.createVideoSream(options)
 
-Returns a video stream. Each data event is a full frame. Parameters are
-outlined in the VAPIX® [Video Streaming API](http://www.axis.com/files/manuals/vapix_video_streaming_48700_en_1208.pdf)
+Returns a video stream. Each data event is a full frame. Parameters to
+be set as an object in `options` are outlined in the VAPIX®
+[Video Streaming API](http://www.axis.com/files/manuals/vapix_video_streaming_48700_en_1208.pdf)
 document.
 
 	var options = {
@@ -56,12 +57,49 @@ document.
 		console.log('Finished.');
 	});
 
+### camera.requestImage([options], callback)
+
+Grab an image. Parameters to be set as an object in `options` are
+outlined in the VAPIX® [Video Streaming API](http://www.axis.com/files/manuals/vapix_video_streaming_48700_en_1208.pdf)
+document.
+
+	var fs = require('fs');
+
+	var options = {
+		resolution: '640x480',
+		compression: 30,
+		rotation: 0
+	}
+
+	camera.requestImage(options, function(err, data) {
+		if (err) throw err;
+
+		fs.writeFile("out.jpg", data, function(err) {
+			if (err) throw err;
+		});
+	});
+
+### camera.getImageResolution()
+
+Returns an object containing the `width` and `height` of the camera's image
+resolution setting.
+
+	camera.getImageResolution(function(err, data) {
+		if (err) throw err;
+
+		console.log(data); // { width: '640', height: '480' }
+	});
 
 ## License
 
 node-vapix is written under the [MIT License](http://opensource.org/licenses/MIT)
 
 ## Status
+
+#### 0.4
+- More API documentation
+- requestImage() now supports optional options argument
+- Private method request() now takes 1 path string instead of as an object
 
 #### 0.3
 - Added createVideoStream()
