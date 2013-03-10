@@ -19,14 +19,53 @@ interface with Axis cameras.
 For more details, and the source of the above quote, see Axis' page on
 the API.
 
-[http://www.axis.com/techsup/cam_servers/dev/cam_http_api_index.php]
-(http://www.axis.com/techsup/cam_servers/dev/cam_http_api_index.php)
+[http://www.axis.com/techsup/cam_servers/dev/cam_http_api_index.php](http://www.axis.com/techsup/cam_servers/dev/cam_http_api_index.php)
+
+## Install and usage
+
+Install from npm:
+
+	npm install vapix
+
+And to use...
+
+	var vapix = require('vapix');
+
+## Methods
+
+### camera.createVideoSream(options)
+
+Returns a video stream. Each data event is a full frame. Parameters are
+outlined in the VAPIX® [Video Streaming API](http://www.axis.com/files/manuals/vapix_video_streaming_48700_en_1208.pdf)
+document.
+
+	var options = {
+		resolution: '640x480',
+		compression: 25,
+		duration: 10,
+		fps: 30
+	}
+
+	var mjpg = camera.createVideoStream(options);
+
+	mjpg.on('data', function(data) {
+		// do something with the frame here
+	});
+
+	mjpg.on('end', function() {
+		console.log('Finished.');
+	});
+
 
 ## License
 
 node-vapix is written under the [MIT License](http://opensource.org/licenses/MIT)
 
 ## Status
+
+#### 0.3
+- Added createVideoStream()
+- Created method for generating HTTP GET queries
 
 #### 0.2
 
