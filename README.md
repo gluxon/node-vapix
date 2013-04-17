@@ -25,11 +25,15 @@ the API.
 
 Install from npm:
 
-	npm install vapix
+``` bash
+$ npm install vapix
+```
 
 And to use...
 
-	var vapix = require('vapix');
+``` javascript
+var vapix = require('vapix');
+```
 
 ## Methods
 
@@ -40,22 +44,24 @@ be set as an object in `options` are outlined in the VAPIX®
 [Video Streaming API](http://www.axis.com/files/manuals/vapix_video_streaming_48700_en_1208.pdf)
 document.
 
-	var options = {
-		resolution: '640x480',
-		compression: 25,
-		duration: 10,
-		fps: 30
-	}
+``` javascript
+var options = {
+	resolution: '640x480',
+	compression: 25,
+	duration: 10,
+	fps: 30
+}
 
-	var mjpg = camera.createVideoStream(options);
+var mjpg = camera.createVideoStream(options);
 
-	mjpg.on('data', function(data) {
-		// do something with the frame here
-	});
+mjpg.on('data', function(data) {
+	// do something with the frame here
+});
 
-	mjpg.on('end', function() {
-		console.log('Finished.');
-	});
+mjpg.on('end', function() {
+	console.log('Finished.');
+});
+```
 
 ### camera.requestImage([options], callback)
 
@@ -63,32 +69,36 @@ Grab an image. Parameters to be set as an object in `options` are
 outlined in the VAPIX® [Video Streaming API](http://www.axis.com/files/manuals/vapix_video_streaming_48700_en_1208.pdf)
 document.
 
-	var fs = require('fs');
+``` javascript
+var fs = require('fs');
 
-	var options = {
-		resolution: '640x480',
-		compression: 30,
-		rotation: 0
-	}
+var options = {
+	resolution: '640x480',
+	compression: 30,
+	rotation: 0
+}
 
-	camera.requestImage(options, function(err, data) {
+camera.requestImage(options, function(err, data) {
+	if (err) throw err;
+
+	fs.writeFile("out.jpg", data, function(err) {
 		if (err) throw err;
-
-		fs.writeFile("out.jpg", data, function(err) {
-			if (err) throw err;
-		});
 	});
+});
+```
 
 ### camera.getImageResolution()
 
 Returns an object containing the `width` and `height` of the camera's image
 resolution setting.
 
-	camera.getImageResolution(function(err, data) {
-		if (err) throw err;
+``` javascript
+camera.getImageResolution(function(err, data) {
+	if (err) throw err;
 
-		console.log(data); // { width: '640', height: '480' }
-	});
+	console.log(data); // { width: '640', height: '480' }
+});
+```
 
 ## License
 
