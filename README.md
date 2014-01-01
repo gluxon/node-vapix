@@ -106,6 +106,10 @@ node-vapix is written under the [MIT License](http://opensource.org/licenses/MIT
 
 ## Status
 
+#### 0.6
+- Provide createCamera utility method.
+- Remove ability to directly create new camera object (API change)
+
 #### 0.4
 - More API documentation
 - requestImage() now supports optional options argument
