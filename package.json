@@ -1,6 +1,6 @@
 {
   "name": "vapix",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "author": "Brandon Cheng <gluxon@gluxon.com>",
   "description": "VAPIX is Axis’ own open API, implemented in Node.js ",
   "repository": {
@@ -9,7 +9,8 @@
   },
   "main": "./lib/vapix",
   "dependencies" : {
-    "mjpeg-consumer" : "0.2.0"
+    "mjpeg-consumer" : "0.3.0",
+    "request"        : "2.x.x"
   },
   "license": "MIT",
   "engines": {

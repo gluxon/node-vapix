@@ -1,19 +1,17 @@
 var vapix = require('..');
 var fs = require('fs');
 
-var options = {
-	address: '10.1.78.11',
-	port: '80',
-	username: 'FRC',
-	password: 'FRC'
-};
-
-var camera = new vapix.Camera(options);
+var camera = vapix.createCamera({
+  address: '10.1.78.11',
+  port: '80',
+  username: 'FRC',
+  password: 'FRC'
+});
 
 var options = {
-	resolution: '640x480',
-	compression: 30,
-	rotation: 0
+  resolution: '640x480',
+  compression: 30,
+  rotation: 0
 }
 
 camera.requestImage(options, function(err, data) {
