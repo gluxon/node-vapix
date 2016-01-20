@@ -106,6 +106,9 @@ node-vapix is written under the [MIT License](http://opensource.org/licenses/MIT
 
 ## Status
 
+#### 0.7.1
+- Updated mjpeg-consumer dependency
+
 #### 0.7
 - Reimplemented using request from npm
 
